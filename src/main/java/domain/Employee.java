@@ -7,6 +7,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Employee {
+	
     private Long id;
 
     private String name;

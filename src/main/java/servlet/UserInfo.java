@@ -16,6 +16,7 @@ public class UserInfo extends HttpServlet {
 	                    HttpServletResponse response)
 	     throws ServletException, IOException {
 	    response.setContentType("text/html");
+	    response.setCharacterEncoding("UTF-8");
 	
 	    PrintWriter out = response.getWriter();
 	
@@ -24,11 +25,11 @@ public class UserInfo extends HttpServlet {
 	                "<H1>Recapitulatif des informations</H1>\n" +
 	                "<UL>\n" +            
 	        " <LI>Nom: "
-	                + request.getParameter("name") + "\n" +
+	                + (String)request.getParameter("name") + "\n" +
 	                " <LI>Prenom: "
-	                + request.getParameter("firstname") + "\n" +
+	                + (String)request.getParameter("firstname") + "\n" +
 	                " <LI>Age: "
-	                + request.getParameter("age") + "\n" +
+	                + (String)request.getParameter("age") + "\n" +
 	                "</UL>\n" +                
 	        "</BODY></HTML>");
 	}
