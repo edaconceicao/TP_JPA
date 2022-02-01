@@ -27,12 +27,6 @@ public class UtilisateurDao extends AbstractJpaDao<String, Utilisateur>{
         return utilisateurs;
     }
 
-    public List<Utilisateur> getAllAdmins(){
-        String query = "select a from Admin as a";
-        List<Utilisateur> admins = entityManager.createQuery(query, Utilisateur.class).getResultList();
-        return admins;
-    }
-
     public List<String> getIdOfUserByName(String...names){
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<String> query = criteriaBuilder.createQuery(String.class);
@@ -47,20 +41,6 @@ public class UtilisateurDao extends AbstractJpaDao<String, Utilisateur>{
         Utilisateur utilisateur = entityManager.createQuery(query, Utilisateur.class)
                 .setParameter("mail", mail).getSingleResult();
         return utilisateur;
-    }
-
-    public Utilisateur getAdminByEmail(String mail){
-        String query = "select a from Admin as a where a.mail=:mail";
-        Utilisateur admin  = entityManager.createQuery(query, Utilisateur.class)
-                .setParameter("mail", mail).getSingleResult();
-        return admin;
-    }
-
-    public List<Utilisateur> getAdminByName(String name){
-        String query = "select a from Admin as a where a.nom=:name";
-        List<Utilisateur> admins = entityManager.createQuery(query, Utilisateur.class)
-                .setParameter("name", name).getResultList();
-        return admins;
     }
 }
 
