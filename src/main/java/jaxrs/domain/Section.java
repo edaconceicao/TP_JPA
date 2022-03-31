@@ -11,7 +11,7 @@ import java.util.List;
 @XmlRootElement(name = "Section")
 public class Section implements Serializable {
 
-    private long id;
+    private int id;
     private String nom;
     private List<Fiche> fiches;
     private KanbanBoard kanbanBoard;
@@ -19,11 +19,11 @@ public class Section implements Serializable {
     @Id
     @GeneratedValue
     @XmlElement(name = "id")
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
     @XmlElement(name = "nom")

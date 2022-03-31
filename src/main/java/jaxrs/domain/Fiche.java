@@ -10,7 +10,7 @@ import java.io.Serializable;
 @XmlRootElement(name = "Fiche")
 public class Fiche implements Serializable {
 
-    private long id;
+    private int id;
     private Integer position;
     private String libelle;
     private String date;
@@ -25,7 +25,7 @@ public class Fiche implements Serializable {
     @Id
     @GeneratedValue
     @XmlElement(name = "id")
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -48,7 +48,7 @@ public class Fiche implements Serializable {
         this.utilisateur = utilisateur;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
