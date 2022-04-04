@@ -22,7 +22,7 @@ export class MyComponentComponent implements OnInit {
   ngOnInit(): void {
     this.pokeService.getPokemons().subscribe((data) => {
         data.results.forEach((e, index) => {
-          this.pokeList.push(new Pokemon(index, e.name, e.url));
+          this.pokeList.push(new Pokemon(''+index, e.name, e.url));
         });
       }
     );
