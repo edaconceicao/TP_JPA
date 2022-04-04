@@ -5,3 +5,4 @@ L'identifiant de mon pokemon est : {{selectedPokemonId}}
     <option [value]="pokemon.id" 
     *ngFor="let pokemon of pokeList | filterPokemonPipe : 'name' : searchPokemonName">{{pokemon.name}}</option>
 </select>
+<button (click) = "go()" >Go ! </button>
