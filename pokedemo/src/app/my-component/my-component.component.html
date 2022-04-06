@@ -6,3 +6,7 @@ L'identifiant de mon pokemon est : {{selectedPokemonId}}
     *ngFor="let pokemon of pokeList | filterPokemonPipe : 'name' : searchPokemonName">{{pokemon.name}}</option>
 </select>
 <button (click) = "go()" >Go ! </button>
+<div *ngIf = "pokeDetail">
+    <app-poke-component [detail] = "pokeDetail"></app-poke-component>
+
+</div>
